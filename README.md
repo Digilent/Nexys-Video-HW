@@ -8,14 +8,10 @@ Each demo contained in this repository is documented on the Digilent Wiki, links
 
 | Wiki Link | Description |
 |-----------|-------------|
-| [Nexys Video General Purpose I/O Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/gpio) | 
- A hardware-only project using the Nexys Video's switches, LEDs, pushbuttons, onboard OLED display and USB UART bridge |
-| [Nexys Video Keyboard Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/keyboard) | 
- When a keyboard button is pressed/released, the value of the scan code will be converted to ASCII and transmitted to the terminal |
-| [Nexys Video XADC Analog to Digital Converter Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/xadc) | 
- A hardware-only project using the Nexys Video's analog-to-digital converter ciruitry, and the OLED display |
-| [Nexys Video OLED Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/oled) | 
- A hardware-only project using the Nexys Video's LEDs, pushbuttons and OLED Display written in Verilog.  |
+| [Nexys Video General Purpose I/O Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/gpio) |A hardware-only project using the Nexys Video's switches, LEDs, pushbuttons, onboard OLED display and USB UART bridge |
+| [Nexys Video Keyboard Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/keyboard) |When a keyboard button is pressed/released, the value of the scan code will be converted to ASCII and transmitted to the terminal |
+| [Nexys Video XADC Analog to Digital Converter Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/xadc) |A hardware-only project using the Nexys Video's analog-to-digital converter ciruitry, and the OLED display |
+| [Nexys Video OLED Demo](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/demos/oled) |A hardware-only project using the Nexys Video's LEDs, pushbuttons and OLED Display written in Verilog.  |
 
 ## Repository Description
 
