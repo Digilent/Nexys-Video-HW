@@ -125,7 +125,7 @@ wire  [8:0] pbuf_write_addr;
 reg   [2:0] write_byte_count=0;
 
 wire [15:0] init_operation;
-reg   [3:0] startup_count=0;
+reg   [4:0] startup_count=0;
 reg         iop_state_select=0;
 reg         iop_res_set=0;
 reg         iop_res_val=0;
@@ -243,7 +243,7 @@ always@(posedge clk)
             temp_spi_data    <= iop_data;
             state            <= UtilitySpiWait;
         end
-        if (startup_count == 4'd15) begin
+        if (startup_count == 5'd17) begin
             //        after_state    <= ActiveWait;
             after_state          <= ActiveUpdatePage;
             after_update_state   <= ActiveWait;
