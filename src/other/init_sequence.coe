@@ -2,38 +2,39 @@ memory_initialization_radix=16;
 memory_initialization_vector=
 	1901,
 	51ae,
-	51A8,
-	511F,
 	2101,
 	3101,
+	51A8,
+	511F,
 	518d,
 	5114,
 	51D9,
 	51F1,
-	1264,
 	5081,
 	500F,
 	50A0,
 	50C0,
 	50DA,
 	5002,
-	50AF;
+	1264,
+	50AF,
+	1064;
 	
-; line 3: turn on VDD
+; line 3: turn on VDD(active low), delay 1ms
 ; line 4: "display off" command
-; line 5: added multiplex ratio
-; line 6: set multiplex ratio to 32
-; line 7: toggle reset on
-; line 8: toggle reset off
-; line 9: setting the charge pump
-; line 10: enable the charge pump
-; line 11: set pre-charge period
-; line 12: pre-charge period values
-; line 13: turn on VBAT
-; line 14: BANK0 contrast control
-; line 15: contrast value
-; line 16: set segment remap (column address 0 is mapped to SEG0)
-; line 17: vertically flipping the display
-; line 18: set COM pins hardware configuration
-; line 19: sequential COM pin configuration, disable COM Left/Right remap
-; line 20: "display on" command
+; line 5: toggle reset on(active low), delay 1ms
+; line 6: toggle reset off(active low), delay 1ms
+; line 7: added multiplex ratio (hA8)
+; line 8: set multiplex ratio to 32 (h1F)
+; line 9: setting the charge pump (h8D)
+; line 10: enable the charge pump (h14)
+; line 11: set pre-charge period (hD9)
+; line 12: pre-charge period values (hF1)
+; line 13: BANK0 contrast control (h81)
+; line 14: contrast value (h0F)
+; line 15: set segment remap (column address 0 is mapped to SEG0) (hA0)
+; line 16: vertically flipping the display (hC0)
+; line 17: set COM pins hardware configuration (hDA)
+; line 18: sequential COM pin configuration, disable COM Left/Right remap (h00)
+; line 19: turn on VBAT, delay 100ms
+; line 20: "display on" command (hAF)
