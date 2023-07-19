@@ -168,8 +168,8 @@ assign pbuf_read_addr = {temp_page, temp_index};
 assign char_lib_addr = {temp_write_ascii, write_byte_count};
 assign pbuf_write_en = (state == ActiveWrite) ? 1'b1 : 1'b0;
 assign pbuf_write_addr = temp_write_base_addr + write_byte_count;
-assign SDIN = (state == BringdownVddOff || state == Idle) ? 1'b0 : sdin_int;
-assign SCLK = (state == BringdownVddOff || state == Idle) ? 1'b0 : sclk_int;
+assign SDIN = (state == BringdownVddOff || state == Idle || ((startup_count == 5'b0 || startup_count == 5'b1) && (state == StartupFetch || state == Startup || state == UtilityDelayWait))) ? 1'b0 : sdin_int;
+assign SCLK = (state == BringdownVddOff || state == Idle || ((startup_count == 5'b0 || startup_count == 5'b1) && (state == StartupFetch || state == Startup || state == UtilityDelayWait))) ? 1'b0 : sclk_int;
 
 //read only memory for character bitmaps
 charLib CHAR_LIB (
