@@ -100,7 +100,7 @@ reg   [1:0] temp_page=0;
 reg   [6:0] temp_index=0;
 
 reg 	   	oled_dc=1;
-reg 	   	oled_res=1;
+reg 	   	oled_res=0;
 reg 	   	oled_vdd=1;
 reg 	   	oled_vbat=1;
 
@@ -170,6 +170,7 @@ assign pbuf_write_en = (state == ActiveWrite) ? 1'b1 : 1'b0;
 assign pbuf_write_addr = temp_write_base_addr + write_byte_count;
 assign SDIN = (state == BringdownVddOff || state == Idle) ? 1'b0 : sdin_int;
 assign SCLK = (state == BringdownVddOff || state == Idle) ? 1'b0 : sclk_int;
+
 //read only memory for character bitmaps
 charLib CHAR_LIB (
     .clka(clk),
@@ -206,9 +207,9 @@ assign toggle_disp_ready = (state == ActiveWait && toggle_disp_start == 1'b0) ? 
 always@(posedge clk)
 	case (state)
 	Idle: begin
+	    startup_count <= 5'b0;
         if (disp_on_start) begin
 //            state    <= StartupVddOn;
-            startup_count <= 'b0;
             state <= StartupFetch;
         end
         disp_is_full <= 1'b0;
@@ -232,7 +233,7 @@ always@(posedge clk)
             temp_spi_data    <= iop_data;
             state            <= UtilitySpiWait;
         end
-        if (startup_count == 5'd18) begin
+        if (startup_count == 5'd19) begin
             //        after_state    <= ActiveWait;
             after_state          <= ActiveUpdatePage;
             after_update_state   <= ActiveWait;
@@ -382,7 +383,7 @@ always@(posedge clk)
     BringdownVbatOff: begin
         oled_vbat        <= 1'b1;
         temp_delay_start <= 1'b1;
-        temp_delay_ms    <= 12'd100;
+        temp_delay_ms    <= 12'd3500;
         after_state      <= BringdownVddOff;
         state            <= UtilityDelayWait;
     end
